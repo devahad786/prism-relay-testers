@@ -10,25 +10,25 @@ on:
     inputs:
       android_personas:
         description: Android personas from personas.json (comma-separated, all = every Android persona, none = skip Android)
-        default: "anna,malik"
+        default: "anna,malik,grace,lucia"
       ios_personas:
         description: iOS personas from personas.json (comma-separated, all = every iOS persona, none = skip iOS)
-        default: "clara,jonas"
+        default: "none"
       app_dir:
         description: App folder (where package.json is)
-        default: demo-app
+        default: game
       app_id:
         description: Android package / iOS bundle id (if a platform uses another id, the one inside its built app is used)
-        default: com.example.tinytodo
+        default: com.techversol.prismrelay
       framework:
         description: auto, flutter, expo, react-native, capacitor, kmp, native or maui
         default: auto
       android_build:
         description: "Custom Android build command or prebuilt download (optional, then set apk_path)"
-        default: ""
+        default: "test -s PrismRelay-Preview.apk"
       apk_path:
         description: Path of the .apk produced by android_build
-        default: ""
+        default: "PrismRelay-Preview.apk"
       ios_build:
         description: "Custom iOS build command or prebuilt download (optional, then set ios_app_path)"
         default: ""
@@ -46,7 +46,7 @@ on:
         default: ""
       brief:
         description: Agent brief file
-        default: AGENT_BRIEF.md
+        default: briefs/prism-relay.md
       bug_report:
         description: "Bug to reproduce instead of exploring: an issue (owner/repo#123 or its URL) or the steps as text. Agents follow it: read it first"
         default: ""
